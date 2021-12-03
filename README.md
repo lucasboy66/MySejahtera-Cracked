@@ -170,3 +170,9 @@ Apa yang menjadi masalah adalah, jika hacker dapat crendential ini, maka ia dapa
 
 ## 7. Server Footprinting
 Kerja dalam proses
+
+## 8. Cordova App Rebuild (Clone)
+Kerja dalam proses
+
+## 9. XSS Attack
+Kerja dalam proses
