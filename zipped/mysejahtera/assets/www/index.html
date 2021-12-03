@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <script data-ionic="inject">
+    (function(w){var i=w.Ionic=w.Ionic||{};i.version='3.9.10';i.angular='5.2.10';i.staticDir='build/';})(window);
+  </script>
+  <meta charset="UTF-8">
+  <title>KPISOFT</title>
+  <meta name="viewport"
+    content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: cdvfile: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-eval' 'unsafe-inline'"> -->
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src * 'self' cdvfile://*; style-src 'unsafe-inline' 'self' cdvfile://*; script-src 'self' 'unsafe-eval' cdvfile://*"> -->
+  <!--<meta http-equiv="Content-Security-Policy" content="font-src 'self'; data: img-src * data: default-src * 'unsafe-eval' 'unsafe-inline' default-src 'self' gap://ready file://* * style-src 'self' 'unsafe-inline' script-src 'self' 'unsafe-inline' 'unsafe-eval' localhost:35729 mailto:*">-->
+
+  <meta http-equiv="Content-Security-Policy"
+    content="font-src 'self' https://fonts.gstatic.com; data: img-src *  default-src * 'unsafe-eval' 'unsafe-inline' default-src 'self' gap://ready file://* * style-src 'self' 'unsafe-inline' https://fonts.googleapis.com script-src 'self' 'unsafe-inline' 'unsafe-eval' localhost:8080 mailto:* data:blob:cdvphotolibrary">
+
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
+  <link rel="manifest" href="assets/manifest.json">
+  <meta name="theme-color" content="#4e8ef7">
+
+
+  <!-- un-comment this code to enable service worker
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('service worker installed'))
+        .catch(err => console.log('Error', err));
+    }
+  </script>-->
+
+  <link href="build/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Ionic's root component and where the app will load -->
+  <ion-app></ion-app>
+
+  <!-- The polyfills js is generated during the build process -->
+
+  <!-- cordova.js required for cordova apps -->
+  <script src="cordova.js"></script>
+
+  <!-- <script src="assets/libs/rounded-corners.js"></script> -->
+
+  <!--<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>-->
+  <!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script> -->
+  <!-- <script id="googleMaps" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOAWdApmw_YtxyYszUYyIN61pqTord-rY&amp;libraries=places"></script> -->
+
+  <script id="googleMaps"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOAs4mB3aKYNvf70wRyeWiwU_RKV8ufVk&amp;libraries=places">
+  </script>
+  <!-- AIzaSyBKbN_wEYEnNnqdQr35-pcin8vpDtiiICk -->
+
+  <!--<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDUW_CEkM1FF4rNdmoGiCg3XCWtzG3O9JY&sensor=false&libraries=places"></script>-->
+
+
+
+
+  <script src="build/polyfills.js"></script>
+  <script src="build/vendor.js"></script>
+  <!-- The bundle js is generated during the build process -->
+
+
+  <!-- for highcharts -->
+
+  <script src="assets/libs/highstock.js"></script>
+  <script src="assets/libs/map.js"></script>
+  <script src="assets/libs/highcharts-more.js"></script>
+  <script src="assets/libs/solid-gauge.js"></script>
+  <script src="assets/libs/funnel.js"></script>
+  <script src="assets/libs/bullet.js"></script>
+  <script src="assets/libs/no-data-to-display.js"></script>
+  <script src="assets/libs/treemap.js"></script>
+  <script src="assets/libs/heatmap.js"></script>
+  <script src="assets/libs/hammer.min.js"></script>
+  <script src="build/main.js"></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <clipPath id="clip-COVID-19_Jaringan_Prihatin">
+      <rect width="512" height="512"/>
+    </clipPath>
+  </defs>
+  <g id="COVID-19_Jaringan_Prihatin" data-name="COVID-19 Jaringan Prihatin" clip-path="url(#clip-COVID-19_Jaringan_Prihatin)">
+    <g id="smartphone">
+      <circle id="Ellipse_59" data-name="Ellipse 59" cx="256" cy="256" r="256" fill="#ffdc00"/>
+      <path id="Path_971" data-name="Path 971" d="M512,256c0-5.2-.173-10.35-.479-15.469L361.5,90.51l-211,330.98,90.031,90.031c5.119.306,10.273.479,15.469.479C397.385,512,512,397.385,512,256Z" fill="#ffc000"/>
+      <rect id="Rectangle_922" data-name="Rectangle 922" width="211" height="330.98" transform="translate(150.5 90.51)" fill="#333"/>
+      <rect id="Rectangle_923" data-name="Rectangle 923" width="105.5" height="330.98" transform="translate(256 90.51)" fill="#1a1a1a"/>
+      <rect id="Rectangle_924" data-name="Rectangle 924" width="145" height="269" transform="translate(183.5 121.5)" fill="#b9eaff"/>
+      <rect id="Rectangle_925" data-name="Rectangle 925" width="72.5" height="269" transform="translate(256 121.5)" fill="#35ccff"/>
+      <path id="Path_972" data-name="Path 972" d="M315,229.293c.439-17.523-13.388-31.6-30.9-30.778A29.512,29.512,0,0,0,256,227.993a29.511,29.511,0,0,0-29.931-29.508c-16.622.231-29.614,14.36-29.066,30.975,1.35,40.956,58.855,62.006,59,62.058h0C256.147,291.473,313.893,273.624,315,229.293Z" fill="#f1333f"/>
+      <path id="Path_973" data-name="Path 973" d="M315,229.293c.439-17.523-13.388-31.6-30.9-30.778A29.511,29.511,0,0,0,256,227.966v63.553C256.163,291.468,313.893,273.618,315,229.293Z" fill="#ae283f"/>
+    </g>
+  </g>
+</svg>

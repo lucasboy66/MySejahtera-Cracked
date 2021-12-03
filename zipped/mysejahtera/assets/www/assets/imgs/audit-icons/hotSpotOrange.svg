@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 100 100">
+  <defs>
+    <clipPath id="clip-Artboard_2">
+      <rect width="100" height="100"/>
+    </clipPath>
+  </defs>
+  <g id="Artboard_2" data-name="Artboard – 2" clip-path="url(#clip-Artboard_2)">
+    <g id="alert" transform="translate(1.999 -20.059)">
+      <path id="Path_33" data-name="Path 33" d="M94.267,108.669a8.673,8.673,0,0,1-7.59,4.382H8.779A8.764,8.764,0,0,1,1.189,99.9L40.138,32.441a8.764,8.764,0,0,1,15.18,0L94.267,99.9A8.674,8.674,0,0,1,94.267,108.669Z" transform="translate(0 0)" fill="#f6c14f"/>
+      <g id="Group_13" data-name="Group 13" transform="translate(39.875 48.456)">
+        <path id="Path_35" data-name="Path 35" d="M229.585,145.318v20.4a7.853,7.853,0,1,1-15.706,0v-20.4a7.853,7.853,0,0,1,15.706,0Z" transform="translate(-213.879 -137.465)" fill="#fff"/>
+        <path id="Path_36" data-name="Path 36" d="M229.585,351.994a7.853,7.853,0,1,1-7.853-7.853A7.862,7.862,0,0,1,229.585,351.994Z" transform="translate(-213.879 -305.609)" fill="#fff"/>
+      </g>
+      <g id="Group_14" data-name="Group 14" transform="translate(47.728 48.456)">
+        <path id="Path_37" data-name="Path 37" d="M263.853,351.994A7.862,7.862,0,0,1,256,359.847V344.141A7.862,7.862,0,0,1,263.853,351.994Z" transform="translate(-256 -305.609)" fill="#fff"/>
+        <path id="Path_38" data-name="Path 38" d="M263.853,145.318v20.4A7.862,7.862,0,0,1,256,173.575v-36.11A7.862,7.862,0,0,1,263.853,145.318Z" transform="translate(-256 -137.465)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

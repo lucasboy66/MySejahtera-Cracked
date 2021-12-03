@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 18 18" style="enable-background:new 0 0 18 18;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;}
+	.st1{display:inline;fill:none;}
+	.st2{display:inline;fill:#3A83FF;}
+	.st3{display:inline;}
+	.st4{fill:#AFAFAF;}
+	.st5{fill:#3A83FF;}
+</style>
+<g id="Layer_1" class="st0">
+	<g>
+		<path class="st1" d="M-1.8-1.8h21.6v21.6H-1.8V-1.8z"/>
+		<path class="st2" d="M0.9,9.9h7.2v-9H0.9V9.9z M0.9,17.1h7.2v-5.4H0.9V17.1z M9.9,17.1h7.2v-9H9.9V17.1z M9.9,0.9v5.4h7.2V0.9H9.9
+			z"/>
+	</g>
+	<g id="Layer_2_1_">
+		<g class="st3">
+			<path class="st4" d="M16.1,1.8v2.1h-2.2V1.8H16.1 M10,1.8v2.1H7.9V1.8H10 M4,1.8v2.1H1.9V1.8H4 M16.1,7.8v2.1h-2.2V7.8H16.1
+				 M10,7.8v2.1H7.9V7.8H10 M4,7.8v2.1H1.9V7.8H4 M16.1,13.9V16h-2.2v-2.1H16.1 M10,13.9V16H7.9v-2.1H10 M4,13.9V16H1.9v-2.1H4
+				 M17.1,0.8h-4.2v4.1h4.2V0.8L17.1,0.8z M11,0.8H6.9v4.1H11V0.8L11,0.8z M5,0.8H0.9v4.1H5V0.8L5,0.8z M17.1,6.8h-4.2v4.1h4.2V6.8
+				L17.1,6.8z M11,6.8H6.9v4.1H11V6.8L11,6.8z M5,6.8H0.9v4.1H5V6.8L5,6.8z M12.9,12.8V17h4.2v-4.1L12.9,12.8L12.9,12.8L12.9,12.8z
+				 M6.9,12.8V17H11v-4.1L6.9,12.8L6.9,12.8L6.9,12.8z M0.9,12.8V17H5v-4.1L0.9,12.8L0.9,12.8L0.9,12.8z"/>
+		</g>
+	</g>
+	<g id="Layer_2_2_" class="st3">
+		<path class="st5" d="M0.9,0.8v4.1H5V0.8H0.9z M6.9,0.8v4.1H11V0.8H6.9z M12.9,0.8v4.1h4.2V0.8H12.9z M0.9,6.8v4.1H5V6.8H0.9z
+			 M6.9,6.8v4.1H11V6.8H6.9z M12.9,6.8v4.1h4.2V6.8H12.9z M0.9,12.8V17H5v-4.1L0.9,12.8L0.9,12.8z M6.9,12.8V17H11v-4.1L6.9,12.8
+			L6.9,12.8z M12.9,12.8V17h4.2v-4.1L12.9,12.8L12.9,12.8z"/>
+	</g>
+</g>
+<g id="Layer_2">
+	<path class="st5" d="M13.3,8.2V6.5c0-2.4-1.9-4.3-4.3-4.3l0,0c-2.4,0-4.3,1.9-4.3,4.3v1.7c0,1.7-0.7,3.3-1.8,4.5l0,0v1.2h12.3v-1.2
+		l0,0C14,11.5,13.3,9.9,13.3,8.2z"/>
+	<path class="st5" d="M9,17c1,0,1.8-0.8,1.8-1.8H7.2C7.2,16.2,8,17,9,17z"/>
+	<path class="st5" d="M10.2,3.5H7.8V2.2C7.8,1.6,8.3,1,9,1l0,0c0.7,0,1.2,0.6,1.2,1.2V3.5z"/>
+	<circle class="st5" cx="15.2" cy="13.3" r="0.6"/>
+	<circle class="st5" cx="2.8" cy="13.3" r="0.6"/>
+</g>
+</svg>

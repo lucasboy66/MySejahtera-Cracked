@@ -1,0 +1,13 @@
+{
+  "name": "KPISOFT Development",
+  "short_name": "KPISOFT devApp",
+  "start_url": "index.html",
+  "display": "standalone",
+  "icons": [{
+    "src": "assets/img/icon.png",
+    "sizes": "1024x1024",
+    "type": "image/png"
+  }],
+  "background_color": "#387ef5",
+  "theme_color": "#387ef5"
+}
