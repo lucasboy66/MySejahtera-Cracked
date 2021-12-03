@@ -17,6 +17,9 @@ Berikut adalah beberapa perkara major yang saya keluarkan dan rumuskan dalam pro
 - Path Certificate: `assets/www/certificates`
 - Path Cordova Plugin: `assets/www/plugins`
 - Path Javascript (setiap module dalam MySejahtera): `assets/www/build` - Bermula dari `main.js` - Rujuk: `mysejahtera/assets/www/index.html`
+- Database: SQLite (DB Name: `__ionicstorage`) - Location: `default`
+
+Main javascript (app logic) di compile dengan WebPack dan file `main.js` adalah file utama bagi app ini.
 
 ## 2. App Certificate
 Aplikasi ini menyimpan 2 certificate dan salah satunya adalah untuk kegunaan bagi google service. Certificate ini selalunya digunakan untuk indentity verification di server side/client side. Secara teorinya, hanya aplikasi yang disijilkan (certified) sahaja boleh buat request pada server atau sebaliknya.
@@ -64,3 +67,106 @@ Public Key Param.: 05 00
 ```
 Certificate ini boleh dikitar semula dan digunakan pada app yang lain pada build yang sama (mampu di-clone dan dibuat fake app). Tetapi penggunaan certficate ini adalah untuk host verification sahaja (bukan encrpytion etc.), maksudnya tak kira berapa app clone dibuat, data tetap sampai pada server MySejahtera, sama seperti buka URL mysejahtera pada web browser lain-lain, tetapi tetap akses pada tempat yang sama.
 
+## 3. JS Beautified & Extraction
+Setiap webpack js dipecahkan ikut module (per id) dan app ini terkandung lebih 1000 module berada dalam lebih 80 (0.js-87.js + main.js) file js. Kerja-kerja beautify js code dibuat menggunakan online tool https://beautifier.io/. Kerja-kerja retrace semula logic flow agak sukar dan ambil masa kerana saiz code yang sangat besar dan file yang sangat banyak. Sementara ini, kerja-kerja extraction dibuat untuk dapatkan senarai endpoint API/URL Web, senarai host dan senarai function/method sahaja dan diletakkan dalam file berasingan.
+
+- Senarai Method/Functions: `zipped/functions.txt`
+- Senarai End Point/URL: `zipped/urls.txt`
+- Senarai Host: `zipped/host.txt`
+- Senarai Email: `zipped/email.txt`
+- Senarai Table Database: `zipped/tables.txt`
+
+## 4. Application Mode & Request Routing
+Berdasarkan senarai host diatas, aplikasi MySejahtera mempunyai 2 mode, dev (untuk development) & production (pengguna awam). Berikut adalah snippet setting mereka:
+```
+//build/main.js line 19883
+var l = {
+    prodLink: "https://skylarkmr.kpisoft.com/mobile-registry/v1/users?userId=",
+    devLink: "https://mysejahtera.malaysia.gov.my",
+    ...
+    mode: "PROD"
+    ...
+}
+```
+Pada pandangan peribadi saya (berdasarkan setting diatas), kemungkinan aplikasi yang dalam production mode aplikasi akan berinteraksi dengan host `skylarkmr.kpisoft.com` dan untuk development mode menggunakan host `mysejahtera.malaysia.gov.my`. Data-data pengguna awam dihantar ke server `skylarkmr.kpisoft.com` bukan `mysejahtera.malaysia.gov.my`.
+
+## 5. User Validation
+Sementara permulaan proses extraction dibuat, satu email dijumpai dalam `main.js`. Email `anderson@kpisoft.com` berada dalam method `checkForUsername` dalam `main.js` line 20067. Snippet:
+```
+...
+}, e.prototype.checkForUsername = function() {
+    var e = this;
+    return new Promise(function(n, t) {
+        e.db.executeSql("SELECT * FROM login", []).then(function(e, t) {
+            if (e.rows.length > 0) {
+                var l = e.rows.item(0);
+                n("anderson@kpisoft.com" == l.username)
+            } else n(!1)
+        }, function(e) {
+            t(e)
+        })
+    })
+},
+...
+```
+Berdasarkan code diatas, `checkForUsername` buat pemeriksaan username/email dan return `true` jika username adalah `anderson@kpisoft.com` dan sebaliknya return `false`.
+
+## 6. AES Encryption Implementation
+Berdasarkan code yang teliti, aplikasi ini menggunakan AES Encryption untuk encryption JSON String sebelum dihantar ke server dan decrypt semula di server side. Ini adalahlangkah keselamatan yang sangat baik bagi aplkasi mobile bagi mengelakkan MITM Attack (man-in-the-middle). Penggunaan AES ini memerlukan 3 input, iaitu:
+- AES Key (Password) wajib 32 Karakter (selalunya gunakan md5 hash)
+- AES IV Key (Initial Vector) wajib 16 karakter (selalunya random block)
+- Data untuk dienkrypt
+
+Malangnya, aplikasi ini 'hard-coded' credential AES Encryption ini dalam aplikasi ini sendiri. Boleh lihat dalam `main.js` module 88 (initial module) pada line 34674, kita boleh lihat AES Key dan IV Key ditulis tanpa sanitize dan menggunakan 'pure-string'/'readable-string'. Snippet:
+```
+...
+,this.secureKey = "5a11cc4cb8472a3195349dacda4aca6b", this.secureIV = "dfa089ea35e42d5a",
+...
+```
+Dan function/method encrypt & decrypt:
+```
+e.prototype.encrypt = function(e) {
+  var n = this;
+  return new Promise(function(t, a) {
+      try {
+          var i = l.enc.Utf8.parse(n.tokenFromUI),
+              r = l.enc.Utf8.parse(n.tokenFromUI);
+          t(l.AES.encrypt(e, i, {
+              keySize: 16,
+              iv: r,
+              mode: l.mode.ECB,
+              padding: l.pad.Pkcs7
+          }).toString())
+      } catch (e) {
+          a(e)
+      }
+  })
+}, e.prototype.decrypt = function(e) {
+  var n = this;
+  return new Promise(function(t, a) {
+      try {
+          var i = l.enc.Utf8.parse(n.tokenFromUI),
+              r = l.enc.Utf8.parse(n.tokenFromUI);
+          t(l.AES.decrypt(e, i, {
+              keySize: 16,
+              iv: r,
+              mode: l.mode.ECB,
+              padding: l.pad.Pkcs7
+          }).toString(l.enc.Utf8).toString())
+      } catch (e) {
+          a(e)
+      }
+  })
+},
+...
+```
+Berdasarkan code diatas, kita dapati AES crendential adalah seperti berikut:
+- AES Key: 5a11cc4cb8472a3195349dacda4aca6b (32 Karakter dari MD5)
+- AES IV Key: dfa089ea35e42d5a
+
+Apa yang menjadi masalah adalah, jika hacker dapat crendential ini, maka ia dapat memudahkan kerja MITM attack kerana AES IV itu sendiri tidak random dan ianya pure string (text yang boleh dibaca dan copy paste dimana-mana). Pada pendapat saya, walaupun untuk generate random IV Key adalah sukar kerana encryption ini berlaku pada client device, tetapi kita boleh generate IV Key tersebut di server side dan bukan pure string, kemudian encode menggunakan base64. Tidak dinafikan dengan cara ini masih juga hacker mampu lakukan MITM Attack tetapi cara ini mampu menyukarkan hacker kerana perlu membuat IV Key request kalau nak decrypt apa-apa data. 
+
+[UPDATED] AES Ecryption, sementara ini dilihat digunakan untuk scan QR Code sahaja. Penggunaan IV Key yang tidak random (untuk QR Code) tidak menjejaskan keselamatan aplikasi.
+
+## 7. Server Footprinting
+Kerja dalam proses
